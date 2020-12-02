@@ -1,11 +1,11 @@
-from urllib.request import urlopen
-from zipfile import ZipFile
+#from urllib.request import urlopen
+#from zipfile import ZipFile
 from io import BytesIO
 #import shapefile
 #import geopandas as geopandas
 #from shapely.geometry import shape  
 import pandas as pd
-import requests
+#import requests
 import matplotlib.pyplot as plt
 from matplotlib.collections import PatchCollection
 from matplotlib.patches import Circle
