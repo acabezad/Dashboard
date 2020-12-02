@@ -1,24 +1,24 @@
 #from urllib.request import urlopen
 #from zipfile import ZipFile
-from io import BytesIO
+#from io import BytesIO
 #import shapefile
 #import geopandas as geopandas
 #from shapely.geometry import shape  
 import pandas as pd
 #import requests
 import matplotlib.pyplot as plt
-from matplotlib.collections import PatchCollection
-from matplotlib.patches import Circle
-from IPython.display import HTML, display_html, display
+#from matplotlib.collections import PatchCollection
+#from matplotlib.patches import Circle
+#from IPython.display import HTML, display_html, display
 import seaborn as sns
 import numpy as np
-from matplotlib import cm
-from matplotlib import colors
-import ipywidgets as widgets
-from ipywidgets import interact, interactive
+#from matplotlib import cm
+#from matplotlib import colors
+#import ipywidgets as widgets
+#from ipywidgets import interact, interactive
 import dash_html_components as html
 import dash_core_components as dcc
-from dash.dependencies import Input, Output
+#from dash.dependencies import Input, Output
 import dash
 import plotly.graph_objs as go
 import plotly.express as px
@@ -30,8 +30,6 @@ url="https://raw.githubusercontent.com/acabezad/Dashboard_SNIES/main/snies_Conso
 df = pd.read_csv(url,  sep=';',  encoding='latin-1')
 
 #Valida cargue
-print (df.dtypes)
-
 
 #Reenombrar titulos de la base de datos
 df2= df.rename(columns={'Código de \nla Institución  ':'COD_INSTITUCION',
@@ -65,13 +63,11 @@ df2= df.rename(columns={'Código de \nla Institución  ':'COD_INSTITUCION',
 df2=df2.apply(lambda x: x.str.lower() if(x.dtype == "object") else x)
 
 
-print (df2.GENERO.unique())
-
 #Ajusta Area de conocimiento
 df2["GENERO"]=[i.replace("femenino","mujer") for i in df2["GENERO"]]
 
 df2["GENERO"]=[i.replace("masculino","hombre") for i in df2["GENERO"]]
-print (df2.GENERO.unique())
+
 
 
 df2["NIVEL_FORMACION"]=[i.replace("formacion tecnica profesional","tecnica") for i in df2["NIVEL_FORMACION"]]
@@ -83,32 +79,32 @@ df2["NIVEL_FORMACION"]=[i.replace("formación técnica profesional","tecnica") f
 df2["NIVEL_FORMACION"]=[i.replace("especialización tecnologica","especializacion") for i in df2["NIVEL_FORMACION"]]
 df2["NIVEL_FORMACION"]=[i.replace("especialización técnico profesional","especializacion") for i in df2["NIVEL_FORMACION"]]
 df2["NIVEL_FORMACION"]=[i.replace("especialización tecnológica","especializacion") for i in df2["NIVEL_FORMACION"]]
-print (df2.NIVEL_FORMACION.unique())
+
 
 
 df2["CARACTER_IES"]=[i.replace("institución técnica profesional","institucion tecnica profesional") for i in df2["CARACTER_IES"]]
 df2["CARACTER_IES"]=[i.replace("institución tecnológica","institucion tecnologica") for i in df2["CARACTER_IES"]]
 df2["CARACTER_IES"]=[i.replace("institución universitaria/escuela tecnológica","institucion universitaria/escuela tecnologica") for i in df2["CARACTER_IES"]]
-print (df2.CARACTER_IES.unique())
+
 
 
 df2.METODOLOGIA=df2.METODOLOGIA.replace({"virtual":"distancia (virtual)"})
-print (df2.METODOLOGIA.unique())
+
 
 df2["AREA_CONOCIMIENTO"]=[i.replace("ingeniería, arquitectura, urbanismo y afines","ingenieria arquitectura urbanismo y afines") for i in df2["AREA_CONOCIMIENTO"]]
 df2["AREA_CONOCIMIENTO"]=[i.replace("matemáticas y ciencias naturales","matematicas y ciencias naturales") for i in df2["AREA_CONOCIMIENTO"]]
 df2["AREA_CONOCIMIENTO"]=[i.replace("agronomía, veterinaria y afines","agronomia veterinaria y afines") for i in df2["AREA_CONOCIMIENTO"]]
 df2["AREA_CONOCIMIENTO"]=[i.replace("ciencias de la educación","ciencias de la educacion") for i in df2["AREA_CONOCIMIENTO"]]
 df2["AREA_CONOCIMIENTO"]=[i.replace("economía, administración, contaduría y afines","economia administracion contaduria y afines") for i in df2["AREA_CONOCIMIENTO"]]
-print (df2.AREA_CONOCIMIENTO.unique())
+
 
 nombres=list(df2.NIVEL_FORMACION.unique())
-print(nombres)
+
 tb=pd.DataFrame(df2.groupby('NIVEL_FORMACION')['MATRICULADOS'].sum())
 manzanas=list(tb.MATRICULADOS)
 
 
-print (df2.dtypes)
+
 
 
 app = dash.Dash()
