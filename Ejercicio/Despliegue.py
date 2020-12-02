@@ -26,7 +26,7 @@ import plotly.express as px
 
 #Carga base de datos
 
-url="https://raw.githubusercontent.com/acabezad/Dashboard/main/snies_Consolidado_2015_a_2018_TMP.csv"
+url="https://raw.githubusercontent.com/acabezad/Dashboard_SNIES/main/snies_Consolidado_2015_a_2018_TMP.csv"
 df = pd.read_csv(url,  sep=';',  encoding='latin-1')
 
 #Valida cargue
