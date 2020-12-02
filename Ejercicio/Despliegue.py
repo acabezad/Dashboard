@@ -2,7 +2,7 @@ from urllib.request import urlopen
 from zipfile import ZipFile
 from io import BytesIO
 #import shapefile
-import geopandas as geopandas
+#import geopandas as geopandas
 #from shapely.geometry import shape  
 import pandas as pd
 import requests
