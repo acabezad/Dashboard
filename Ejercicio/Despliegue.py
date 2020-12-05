@@ -25,18 +25,18 @@ import plotly.express as px
 #Carga base de datos
 
 url1="https://raw.githubusercontent.com/acabezad/Dashboard/main/snies_Consolidado_2015_a_2018_p1.csv"
-df1 = pd.read_csv(url1,  sep=';',  encoding='latin-1')
+df = pd.read_csv(url1,  sep=';',  encoding='latin-1')
 
-url2="https://raw.githubusercontent.com/acabezad/Dashboard/main/snies_Consolidado_2015_a_2018_p2.csv"
-df2 = pd.read_csv(url2,  sep=';',  encoding='latin-1')
+#url2="https://raw.githubusercontent.com/acabezad/Dashboard/main/snies_Consolidado_2015_a_2018_p2.csv"
+#df2 = pd.read_csv(url2,  sep=';',  encoding='latin-1')
 
-url3="https://raw.githubusercontent.com/acabezad/Dashboard/main/snies_Consolidado_2015_a_2018_p2.csv"
-df3 = pd.read_csv(url3,  sep=';',  encoding='latin-1')
+#url3="https://raw.githubusercontent.com/acabezad/Dashboard/main/snies_Consolidado_2015_a_2018_p2.csv"
+#df3 = pd.read_csv(url3,  sep=';',  encoding='latin-1')
 
-url4="https://raw.githubusercontent.com/acabezad/Dashboard/main/snies_Consolidado_2015_a_2018_p2.csv"
-df4 = pd.read_csv(url4,  sep=';',  encoding='latin-1')
+#url4="https://raw.githubusercontent.com/acabezad/Dashboard/main/snies_Consolidado_2015_a_2018_p2.csv"
+#df4 = pd.read_csv(url4,  sep=';',  encoding='latin-1')
 
-df = pd.concat([df1, df2, df3, df4], axis=0)
+#df = pd.concat([df1, df2, df3, df4], axis=0)
 
 #Reenombrar titulos de la base de datos
 df2= df.rename(columns={'Código de \nla Institución  ':'COD_INSTITUCION',
