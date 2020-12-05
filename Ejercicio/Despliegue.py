@@ -1,27 +1,28 @@
-from urllib.request import urlopen
-from zipfile import ZipFile
-from io import BytesIO
+#from urllib.request import urlopen
+#from zipfile import ZipFile
+#from io import BytesIO
 #import shapefile
-import geopandas as geopandas
-#from shapely.geometry import shape  
+#import geopandas as geopandas
+#from shapely.geometry import shape
 import pandas as pd
-import requests
+#import requests
 import matplotlib.pyplot as plt
-from matplotlib.collections import PatchCollection
-from matplotlib.patches import Circle
-from IPython.display import HTML, display_html, display
+#from matplotlib.collections import PatchCollection
+#from matplotlib.patches import Circle
+#from IPython.display import HTML, display_html, display
 import seaborn as sns
 import numpy as np
-from matplotlib import cm
-from matplotlib import colors
-import ipywidgets as widgets
-from ipywidgets import interact, interactive
+#from matplotlib import cm
+#from matplotlib import colors
+#import ipywidgets as widgets
+#from ipywidgets import interact, interactive
 import dash_html_components as html
 import dash_core_components as dcc
 from dash.dependencies import Input, Output
 import dash
 import plotly.graph_objs as go
 import plotly.express as px
+from jupyter_dash import JupyterDash
 
 
 #Carga base de datos
