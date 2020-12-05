@@ -27,8 +27,9 @@ import plotly.express as px
 
 #Carga base de datos
 
-url1="export_dataframe.csv"
-af = pd.read_csv(url1,  sep=',',  encoding="utf-8")
+
+url1="https://raw.githubusercontent.com/acabezad/Dashboard/main/export_dataframe.csv"
+af = pd.read_csv(url1,  sep=',', encoding="utf-8")
 
 app = dash.Dash()
 
