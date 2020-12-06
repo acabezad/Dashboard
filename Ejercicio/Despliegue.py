@@ -44,13 +44,13 @@ colors = {'background': '#E5E7E9', 'text': '#481099' }
 #diseño del app
 app.layout = html.Div([
     html.H1(children='Dashboard SNIES Colombia', style={ 'textAlign': 'center', 'color': colors['text'] }),
-    html.Div([ 
+    html.Div(["Seleccione un Departamento: ", 
     dcc.Dropdown(
                 id='xaxis-column',
                 options=[{'label': i, 'value': i} for i in available_indicators],
                 value=None,
     style={"display": "inline-block", 'width': '49%','height': '40px'}
-            ),
+            ), "Seleccione un Año: ", 
     dcc.Dropdown(
                 id='yaxis-column',
                 options=[{'label': i, 'value': i} for i in Año],
