@@ -31,7 +31,9 @@ import plotly.express as px
 url1="https://raw.githubusercontent.com/acabezad/Dashboard/main/export_dataframe.csv"
 af = pd.read_csv(url1,  sep=',', encoding="utf-8")
 
-app = dash.Dash()
+    
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+app = dash.Dash(external_stylesheets=external_stylesheets)
 
        
 available_indicators = af['DPTO_IES'].unique()
